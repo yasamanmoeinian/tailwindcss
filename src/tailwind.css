@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@tailwind screens;
+
+@layer base {
+    @font-face {
+        font-family: 'Vazir';
+        src: url("../dist/fonts/Vazir-Black.eot");
+        src: url("../dist/fonts/Vazir-Black.eot") format('embedded-opentype'),
+        url("../dist/fonts/Vazir-Black.ttf") format("truetype"),
+        url("../dist/fonts/Vazir-Black.woff") format("woff"),
+        url("../dist/fonts/Vazir-Black.ttf") format("woff");
+    }
+}
+
+@layer components {
+    .btn {
+        @apply py-2 px-4 rounded-full transition duration-300 ease-in-out
+    }
+
+    .btn-primary {
+        @apply text-white bg-rose-600 hover:bg-gray-100 hover:text-black
+    }
+
+    .btn-secondary {
+        @apply bg-gray-100 text-black hover:bg-rose-600 hover:text-white
+    }
+
+    .nav-item {
+        @apply transition duration-300 ease-in-out hover:border-b-2 hover:border-rose-600
+    }
+
+    .nav-item-active {
+        @apply border-b-2 border-rose-600
+    }
+
+
+    [x-cloak] {
+         display: none !important;
+    }
+
+    .item-dropdown {
+        @apply hover:text-rose-600
+    }
+
+}

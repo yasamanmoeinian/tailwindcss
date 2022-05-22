@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" class="dark" xmlns:x-transition="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link type="text/css" href="dist/style.css" rel="stylesheet"/>
+    <link type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+          rel="stylesheet"/>
+
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
+</head>
+<body class="font-vazir">
+
+<!-- Header -->
+<header class="shadow-lg ">
+    <div class="container mx-auto py-4 px-10">
+        <nav class="flex justify-between items-center relative">
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center">
+                <div>
+                    <button class="btn btn-primary">عضویت</button>
+                    <button class="btn btn-secondary mr-2">ورود</button>
+                </div>
+                <div class="mr-10">
+                    <ul class="flex gap-4">
+                        <li class="nav-item-active"><a href="#">صفحه اصلی</a></li>
+                        <div x-data="dropdown">
+                            <li @click="toggle" class="nav-item" :class="{'nav-item-active' : open}">
+                                <a href="#">
+                                    محصولات
+                                    <i class="fas fa-chevron-down text-xs"></i>
+                                </a>
+                            </li>
+                            <div x-show="open" x-cloak class="absolute top-13 bg-white rounded-lg border py-4 px-6">
+                                <ul class="space-y-3">
+                                    <li class="item-dropdown"><a href="#">لورم اپیسوم</a></li>
+                                    <li class="item-dropdown"><a href="#">لورم اپیسوم متن</a></li>
+                                    <li class="item-dropdown"><a href="#">لورم اپیسوم متن ساختگی</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <li class="nav-item"><a href="#">درباره ما</a></li>
+                        <li class="nav-item"><a href="#">تماس با ما</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Mobile Nav -->
+            <div class="md:hidden" x-data="dropdown">
+                <div @click="toggle">
+                    <i class="fas fa-bars text-lg"></i>
+                </div>
+
+                <div
+                        x-show="open"
+                        x-cloak
+                        class="absolute top-14 bg-white rounded-lg border py-4 px-6 w-full "
+                        x-transition:enter="transition ease-out duration-300"
+                        x-transition:enter-start="opacity-0 scale-90"
+                        x-transition:enter-end="opacity-100 scale-100"
+                        x-transition:leave="transition ease-in duration-300"
+                        x-transition:leave-start="opacity-100 scale-100"
+                        x-transition:leave-end="opacity-0 scale-90">
+                    <div class="absolute" @click="open=false">
+                        <i class="fas fa-times text-xl"></i>
+                    </div>
+                    <div class="mr-10">
+                        <ul class="flex flex-col gap-7 text-center">
+                            <li><a href="#">صفحه اصلی</a></li>
+                            <div x-data="dropdown">
+                                <li @click="toggle">
+                                    <a href="#">
+                                        محصولات
+                                        <i class="fas fa-chevron-down text-xs"></i>
+                                    </a>
+                                </li>
+                                <div x-show="open" x-cloak
+                                     class="max-w-max mx-auto top-14 bg-white rounded-lg border py-4 px-6">
+                                    <ul class="space-y-3">
+                                        <li><a href="#">لورم اپیسوم</a></li>
+                                        <li><a href="#">لورم اپیسوم متن</a></li>
+                                        <li><a href="#">لورم اپیسوم متن ساختگی</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <li class="nav-item"><a href="#">درباره ما</a></li>
+                            <li class="nav-item"><a href="#">تماس با ما</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col gap-4 mt-5">
+                        <button class="btn btn-primary">عضویت</button>
+                        <button class="btn btn-secondary mr-2">ورود</button>
+                    </div>
+                </div>
+            </div>
+            <!--  Logo -->
+            <div>
+                <h2>yasaman</h2>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- Section One -->
+<section>
+    <div class="container mx-auto py-4 px-10">
+        <div class="flex items-center flex-col lg:flex-row gap-x-24">
+            <div data-aos="fade-out" class="mt-8 lg:mt-0">
+                <h1 class="text-2xl font-bold mb-5">با<span class="text-rose-600"> تیم </span>حرفه ایی شو! </h1>
+                <p class="text-gray-600 leading-8 text-justify mb-6">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                    صنعت چاپ، و با
+                    استفاده از طراحان گرافیک است، چاپگرها
+                    و
+                    متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و
+                    کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و
+                    آینده.</p>
+                <button class="btn btn-primary">شروع کنید</button>
+                <button class="btn btn-secondary mr-2">ورود</button>
+            </div>
+            <img data-aos="fade-out" data-aos-delay="400" src="./dist/image/banner.png"/>
+        </div>
+    </div>
+</section>
+<!-- Section Two-->
+<div style="height: 100px; overflow: hidden;">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M-20.59,154.45 C114.84,125.83 369.35,61.69 636.84,-14.28 L566.87,236.36 L224.32,322.22 Z"
+              style="stroke: none; fill: #f3f4f6;"></path>
+    </svg>
+</div>
+<section class="bg-gray-100">
+    <div class="container lg:w-4/5 mx-auto py-4 px-10">
+        <div class="text-center mb-12" data-aos="fade-up" data-aos-delay="400">
+            <h1 class="text-2xl font-bold mb-5">لورم اپیسوم <span class="text-rose-600">متن ساختگی</span></h1>
+            <p class="text-gray-600 leading-8  mb-6">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                صنعت چاپ، و با
+                استفاده از طراحان گرافیک است، چاپگره</p>
+        </div>
+        <div class="grid lg:grid-cols-2 sm:grid-cols-2 gap-10 " data-aos="zoom-in">
+            <div class="flex items-center">
+                <div>
+                    <i class="fas fa-shield-alt  border text-[2rem] border-rose-600 p-4 text-rose-600 rounded-full "></i>
+                </div>
+                <div class="mr-5 text-center">
+                    <p class="mb-3">
+                        دوره
+                    </p>
+                    <span class="text-gray-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است،</span>
+                </div>
+
+            </div>
+            <div class="flex items-center ">
+                <div>
+                    <i class="fas fa-headset  border text-[2rem] border-rose-600 p-4 text-rose-600 rounded-full "></i>
+                </div>
+                <div class="mr-5 text-center">
+                    <p class="mb-3">
+                        دانشجو
+                    </p>
+                    <p class="text-gray-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است،</p>
+                </div>
+
+            </div>
+            <div class="flex items-center">
+                <div>
+                    <i class="fas fa-sliders-h  border text-[2rem] border-rose-600 p-4 text-rose-600 rounded-full "></i>
+                </div>
+
+                <div class="mr-5 text-center">
+                    <p class="mb-3">
+                        کاربر
+                    </p>
+                    <p class="text-gray-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است،</p>
+                </div>
+
+            </div>
+            <div class="flex items-center">
+                <div>
+                    <i class="fas fa-comment  border text-[2rem] border-rose-600 p-4 text-rose-600 rounded-full "></i>
+                </div>
+
+                <div class="mr-5 text-center">
+                    <p class="mb-3">
+                        استاد
+                    </p>
+                    <p class="text-gray-500">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است،</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div style="height: 100px; overflow: hidden;">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M0.00,49.98 C-87.18,-123.83 631.20,-187.97 500.00,49.98 L541.48,-10.34 L-33.57,160.38 Z"
+              style="stroke: none; fill: #f3f4f6;"></path>
+    </svg>
+</div>
+<!-- Section Three-->
+<section>
+    <div class="container lg:w-4/5 mx-auto py-4 px-10">
+        <div class="text-center mb-12" data-aos="fade-up">
+            <h1 class="text-2xl font-bold mb-5">پکیج های <span class="text-rose-600">ویژه</span></h1>
+            <p class="text-gray-600 leading-8  mb-6">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از
+                صنعت چاپ، و با
+                استفاده از طراحان گرافیک است، چاپگره</p>
+        </div>
+        <div class="flex flex-col lg:flex-row justify-between gap-8">
+            <div data-aos="flip-left" data-aos-delay="200"
+                 class="rounded border border-t-8 border-rose-600 py-5 px-20 text-center">
+                <div class="py-5">
+                    <h1 class="text-2xl font-bold">پکیج نقره ایی</h1>
+                    <p class="my-6">لورم <span class="text-2xl font-bold">5000</span></p>
+                    <p class="font-bold text-gray-700">ماهانه</p>
+                </div>
+                <hr>
+                <div class="space-y-4 py-5">
+                    <p class="text-2xl font-bold">لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                </div>
+                <div class="py-8">
+                    <button class="btn btn-primary">خرید پکیج</button>
+                </div>
+            </div>
+            <div data-aos="flip-left" data-aos-delay="400"
+                 class="bg-rose-600	 rounded border border-t-8 border-rose-600 py-5 px-20 text-center text-white">
+                <div class="py-5">
+                    <h1 class="text-2xl font-bold">پکیج برنز</h1>
+                    <p class="my-6">لورم <span class="text-2xl font-bold">5000</span></p>
+                    <p class="font-bold ">ماهانه</p>
+                </div>
+                <hr>
+                <div class="py-5 space-y-4">
+                    <p class="text-2xl font-bold">لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                </div>
+                <div class="py-8">
+                    <button class="btn btn-secondary">خرید پکیج</button>
+                </div>
+            </div>
+            <div data-aos="flip-left" data-aos-delay="600"
+                 class="rounded border border-t-8 border-rose-600 py-5 px-20 text-center">
+                <div class="py-5">
+                    <h1 class="text-2xl font-bold">پکیج طلایی</h1>
+                    <p class="my-6">لورم <span class="text-2xl font-bold">5000</span></p>
+                    <p class="font-bold text-gray-700">ماهانه</p>
+                </div>
+                <hr>
+                <div class="space-y-4 py-5">
+                    <p class="text-2xl font-bold">لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                    <p>لورم اپیسوم</p>
+                </div>
+                <div class="py-8">
+                    <button class="btn btn-primary">خرید پکیج</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<!-- Section Four -->
+<div style="height: 100px; overflow: hidden;">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M-20.59,154.45 C114.84,125.83 369.35,61.69 636.84,-14.28 L566.87,236.36 L224.32,322.22 Z"
+              style="stroke: none; fill: #f3f4f6;"></path>
+    </svg>
+</div>
+<section class="bg-gray-100">
+    <div class="container lg:w-4/5 mx-auto py-4 px-10">
+        <div class="text-center mb-12" data-aos="fade-up" data-aos-delay="400">
+            <h1 class="text-2xl font-bold mb-5">پکیج های <span class="text-rose-600">آموزشی </span></h1>
+        </div>
+        <div class="grid lg:grid-cols-4 sm:grid-cols-2 gap-10 " data-aos="zoom-in">
+            <!-- Course -->
+            <a href="#" class="flex items-center flex-col rounded-lg  bg-white shadow-md pb-5">
+                <div class="w-full">
+                    <img class="rounded-t-lg max-h-60 w-full" src="dist/image/Course/ghodrate-zehn-1.jpg"/>
+                </div>
+                <div class="mr-5 text-center py-6">
+                    <h6>۶ تمرین برای افزایش قدرت ذهن.</h6>
+                    <span class="text-gray-500">5.000.000 تومان</span>
+                </div>
+                <button class="btn btn-primary">خرید</button>
+
+            </a>
+            <!-- Course -->
+            <a href="#" class="flex items-center flex-col rounded-lg  bg-white shadow-md pb-5">
+                <div class="w-full">
+                    <img class="rounded-t-lg max-h-60 w-full" src="dist/image/Course/photo_2022-01-03_21-51-25.jpg"/>
+                </div>
+                <div class="mr-5 text-center py-6">
+                    <h6>چالش آموزشی XCC نییدمگ</h6>
+                    <span class="text-gray-500">5.000.000 تومان</span>
+                </div>
+                <button class="btn btn-primary">خرید</button>
+
+            </a>
+            <!-- Course -->
+            <a href="#" class="flex items-center flex-col rounded-lg  bg-white shadow-md pb-5">
+                <div class="w-full">
+                    <img class="rounded-t-lg max-h-60 w-full" src="dist/image/Course/polaris-gama-1.jpg"/>
+                </div>
+                <div class="mr-5 text-center py-6">
+                    <h6>پولاریس گاما (رشد ۱۰ برابری در ۹۰ روز اول)</h6>
+                    <span class="text-gray-500">5.000.000 تومان</span>
+                </div>
+                <button class="btn btn-primary">خرید</button>
+
+            </a>
+            <!-- Course -->
+            <a href="#" class="flex items-center flex-col rounded-lg  bg-white shadow-md pb-5">
+                <div class="w-full">
+                    <img class="rounded-t-lg max-h-60 w-full" src="dist/image/Course/khalaghiyat-1.jpg"/>
+                </div>
+                <div class="mr-5 text-center py-6">
+                    <h6>سمینار نفوذ در ذهن مخاطب</h6>
+                    <span class="text-gray-500">5.000.000 تومان</span>
+                </div>
+                <button class="btn btn-primary">خرید</button>
+
+            </a>
+        </div>
+    </div>
+</section>
+<div style="height: 100px; overflow: hidden;">
+    <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+        <path d="M0.00,49.98 C-87.18,-123.83 631.20,-187.97 500.00,49.98 L541.48,-10.34 L-33.57,160.38 Z"
+              style="stroke: none; fill: #f3f4f6;"></path>
+    </svg>
+</div>
+<!-- Section Five-->
+<section>
+    <div class="container lg:w-4/5 mx-auto py-4 px-10 mb-20">
+        <div class="text-center mb-12" data-aos="fade-up" data-aos-delay="400">
+            <h1 class="text-2xl font-bold mb-5"><span class="text-rose-600">مشتریان </span>تیم  </h1>
+        </div>
+        <div class="grid lg:grid-cols-8 sm:grid-cols-4 gap-10 " data-aos="fade-right">
+            <div>
+                <img class="rounded-full w-full" src="dist/image/customer/Group4.png"/>
+            </div>
+            <div>
+                <img class="rounded-full w-full" src="dist/image/customer/Group4.png"/>
+            </div>
+            <div>
+                <img class="rounded-full w-full" src="dist/image/customer/Group4.png"/>
+            </div>
+            <div>
+                <img class="rounded-full w-full" src="dist/image/customer/Group4.png"/>
+            </div>
+            <div>
+                <img class="rounded-full w-full" src="dist/image/customer/Group4.png"/>
+            </div>
+            <div>
+                <img class="rounded-full w-full" src="dist/image/customer/Group4.png"/>
+            </div>
+            <div>
+                <img class="rounded-full w-full" src="dist/image/customer/Group4.png"/>
+            </div>
+            <div>
+                <img class="rounded-full w-full" src="dist/image/customer/Group4.png"/>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- Footer-->
+<footer class="bg-gray-700">
+    <p class="text-white py-5">@copyright</p>
+</footer>
+<script defer src="https://unpkg.com/alpinejs@3.10.2/dist/cdn.min.js"></script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+    document.addEventListener('alpine:init', () => {
+        Alpine.data('dropdown', () => ({
+            open: false,
+
+            toggle() {
+                this.open = !this.open
+            }
+        }))
+    })
+
+    AOS.init();
+</script>
+</body>
+</html>
